@@ -7,10 +7,10 @@ package com.example.piromsurang.whateverweather.data;
 public class City {
     private String cityName;
     private String cityCountry;
-    private double longtitude;
-    private double latitude;
+    private float longtitude;
+    private float latitude;
 
-    public City(String cityName, String cityCountry, double longtitude, double latitude) {
+    public City(String cityName, String cityCountry, float longtitude, float latitude) {
         this.cityName = cityName;
         this.cityCountry = cityCountry;
         this.longtitude = longtitude;
@@ -25,11 +25,15 @@ public class City {
         return cityCountry;
     }
 
-    public double getLongtitude() {
+    public float getLongtitude() {
         return longtitude;
     }
 
-    public double getLatitude() {
+    public float getLatitude() {
         return latitude;
+    }
+
+    public String toString() {
+        return String.format("Country: %s City: %s Longtitude: %.3f Latitude: %.3f", cityCountry, cityName, longtitude, latitude);
     }
 }
