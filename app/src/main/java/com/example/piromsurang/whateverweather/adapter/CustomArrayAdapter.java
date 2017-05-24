@@ -59,24 +59,8 @@ public class CustomArrayAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.textview_add);
-        listItemText.setText(list.get(position).getWeather().toString());
+        listItemText.setText(list.get(position).getCityName() + ", " + list.get(position).getCityCountry());
 
-//        if(!list.get(position).getImg_url().equals("")) {
-//            ImageView imageView = (ImageView) view.findViewById(R.id.imageview_cart);
-//            imageView.setImageBitmap(RealBookRepository.getInstance().getBookFromId(list.get(position).getId()).getBitmap());
-//        }
-
-
-        //Handle buttons and add onClickListeners
-//        Button addBtn = (Button)view.findViewById(R.id.delete_btn);
-//
-//        addBtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                presenter.getUser().removeFromCart(list.get(position));
-//                presenter.displayList(list);
-//            }
-//        });
 
         return view;
     }

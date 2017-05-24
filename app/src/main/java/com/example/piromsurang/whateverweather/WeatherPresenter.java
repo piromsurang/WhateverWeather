@@ -15,10 +15,12 @@ public class WeatherPresenter implements Observer {
 
     private CityRepository repository;
     private WeatherView view;
+    private boolean isAddingReady;
 
     public WeatherPresenter(CityRepository repository, WeatherView view) {
         this.repository = repository;
         this.view = view;
+        isAddingReady = false;
     }
 
     public void displayList(ArrayList<City> list) {
@@ -56,7 +58,12 @@ public class WeatherPresenter implements Observer {
         if(arg.toString().equals("")) {
             System.out.println("finished downloading cities data.");
             updateWeather();
-        } else {
+        } else if(arg.toString().equals("finished updating weather")){
+            isAddingReady = true;
         }
+    }
+
+    public boolean isAddpageReady() {
+        return isAddingReady;
     }
 }

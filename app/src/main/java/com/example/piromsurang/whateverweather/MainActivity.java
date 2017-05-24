@@ -1,5 +1,7 @@
 package com.example.piromsurang.whateverweather;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
 
     @Override
     public void createDialog(int b) {
-
     }
 
     public void loadDatabase() {
@@ -58,8 +59,12 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
     }
 
     public void requestAdding(View view) {
-        Intent intent = new Intent(this, AddActivity.class);
-        startActivityForResult(intent, REQUEST_CODE);
+        if(presenter.isAddpageReady()) {
+            Intent intent = new Intent(this, AddActivity.class);
+            startActivityForResult(intent, REQUEST_CODE);
+        } else {
+            presenter.createDialog(0);
+        }
     }
 
     @Override

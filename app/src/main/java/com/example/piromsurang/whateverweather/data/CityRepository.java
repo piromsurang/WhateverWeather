@@ -124,7 +124,6 @@ public class CityRepository extends Observable {
         @Override
         protected Void doInBackground(Void... params) {
             for(City c : cityList) {
-                System.out.println(c.toString());
                 String bookListJsonStr = loadWeatherJson(c);
                 if (bookListJsonStr == null) {
                     return null;
@@ -138,7 +137,7 @@ public class CityRepository extends Observable {
 
                     int temp = (int) (Double.parseDouble(weatherData.getString("temp")) - 273.15);
                     c.getWeather().setTemperature(temp);
-                    System.out.println(c.getWeather().getDescription() + ", " + c.getWeather().getTemperature());
+                    c.getWeather().getIcon("http://openweathermap.org/img/w/" + weatherDetails.getString("icon") + ".png");
                 } catch (JSONException e) {
                     return null;
                 }

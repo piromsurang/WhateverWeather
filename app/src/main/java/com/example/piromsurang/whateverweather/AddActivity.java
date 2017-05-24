@@ -82,7 +82,7 @@ public class AddActivity extends AppCompatActivity implements WeatherView {
     @Override
     public void createDialog(int b) {
         if(b == 0) {
-            toast = Toast.makeText(this, "added", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(this, "ADDED", Toast.LENGTH_SHORT);
         }
         toast.show();
     }
@@ -92,4 +92,12 @@ public class AddActivity extends AppCompatActivity implements WeatherView {
         setResult(RESULT_OK, intent);
         finish();
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
+
+        super.onBackPressed();
+    }
+
 }
