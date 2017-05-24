@@ -6,32 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.piromsurang.whateverweather.MainActivity"
+    tools:context="com.example.piromsurang.whateverweather.AddActivity"
     android:weightSum="1">
 
-    <TextView
+    <EditText
+        android:id="@+id/search_edittext_add"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/weather"
-        android:textAlignment="center"
-        android:textSize="20pt"
-        android:id="@+id/textView" />
+        android:layout_height="wrap_content">
+    </EditText>
 
     <ListView
-        android:id="@+id/favorite_listview_main"
+        android:id="@+id/search_listview_add"
         android:layout_width="match_parent"
-        android:layout_height="392dp"
-        android:layout_below="@+id/textView"
-        android:layout_weight="0.97">
-
+        android:layout_height="406dp"
+        android:layout_weight="1.07">
     </ListView>
 
     <Button
-        android:id="@+id/add_button_main"
+        android:id="@+id/back_button_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add"
-        android:onClick="requestAdding"/>
-
+        android:text="@string/back"
+        android:onClick="back"/>
 
 </LinearLayout>
