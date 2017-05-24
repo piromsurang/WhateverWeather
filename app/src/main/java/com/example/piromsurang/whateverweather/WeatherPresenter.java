@@ -66,4 +66,8 @@ public class WeatherPresenter implements Observer {
     public boolean isAddpageReady() {
         return isAddingReady;
     }
+
+    public City getCityByCityName(String name) {
+        return repository.getCityByCityName(name);
+    }
 }

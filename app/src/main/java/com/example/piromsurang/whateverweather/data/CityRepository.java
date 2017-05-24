@@ -1,5 +1,6 @@
 package com.example.piromsurang.whateverweather.data;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import org.json.JSONArray;
@@ -28,6 +29,7 @@ public class CityRepository extends Observable {
     private ArrayList<City> cityList;
     private ArrayList<City> searchedList;
     private ArrayList<City> favorites;
+    private Context context;
 
     private CityRepository() {
         cityList = new ArrayList<>();
@@ -43,6 +45,10 @@ public class CityRepository extends Observable {
 
         return instance;
 
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     public ArrayList<City> getSearchedList() {
@@ -135,9 +141,9 @@ public class CityRepository extends Observable {
                     c.getWeather().setDescription(weatherDetails.getString("description").toUpperCase());
                     c.getWeather().setDetails("Humidity: " + weatherData.getString("humidity") + "%\nPressure: " + weatherData.getString("pressure") + "hPa");
 
-                    int temp = (int) (Double.parseDouble(weatherData.getString("temp")) - 273.15);
+                    int temp = (int) Math.round(weatherData.getDouble("temp"));
                     c.getWeather().setTemperature(temp);
-                    c.getWeather().getIcon("http://openweathermap.org/img/w/" + weatherDetails.getString("icon") + ".png");
+                    c.getWeather().loadIcon(weatherDetails.getString("icon"), context);
                 } catch (JSONException e) {
                     return null;
                 }

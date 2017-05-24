@@ -1,5 +1,6 @@
 package com.example.piromsurang.whateverweather;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,6 +86,11 @@ public class AddActivity extends AppCompatActivity implements WeatherView {
             toast = Toast.makeText(this, "ADDED", Toast.LENGTH_SHORT);
         }
         toast.show();
+    }
+
+    @Override
+    public Context getContext() {
+        return this.getContext();
     }
 
     public void back(View view) {
