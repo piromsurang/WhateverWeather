@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.piromsurang.whateverweather.adapter.CustomArrayAdapter;
 import com.example.piromsurang.whateverweather.data.CRVReader;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
     private WeatherPresenter presenter;
     private ListView listView;
     private CustomArrayAdapter adapter;
+    private Toast toast;
 
     public static String CITYNAME_CODE = "city";
 
@@ -83,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
 
     @Override
     public void createDialog(int b) {
+        if(b == 0) {
+            toast = Toast.makeText(this, "DELETED", Toast.LENGTH_SHORT);
+        }
+        toast.show();
     }
 
     public void loadDatabase() {
