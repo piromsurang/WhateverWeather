@@ -5,10 +5,12 @@ sudo: false
 
 android:
 	components:
-	- platform-tools
-	- tools
-	- build-tools-25.3.1
-	- android-25
+		- tools
+		- platform-tools
+		- tools
+		- build-tools-25.3.1
+		- android-25
+		- extra-android-m2repository
 
 	before_install:
 	- mkdir "$ANDROID_HOME/licenses" || true
