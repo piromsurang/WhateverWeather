@@ -1,12 +1,10 @@
 package com.example.piromsurang.whateverweather;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.util.Log;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -54,6 +52,16 @@ public class MainActivity extends AppCompatActivity implements WeatherView {
                 startCityDetailActivity(c);
             }
 
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                presenter.removeFromFavorite(repository.getFavorites().get(position));
+                presenter.displayList(repository.getFavorites());
+                return true;
+            }
         });
     }
 

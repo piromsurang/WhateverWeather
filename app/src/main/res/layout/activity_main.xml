@@ -32,7 +32,7 @@
         android:textStyle="bold" />
 
     <ListView
-        android:id="@+id/favorite_listview_main"
+        android:id="@+id/favorite_recyclerview_main"
         style="@android:style/Widget.DeviceDefault.Light.ListView"
         android:layout_width="match_parent"
         android:layout_height="392dp"
