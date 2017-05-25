@@ -43,8 +43,8 @@ public class CityDetailActivity extends AppCompatActivity {
 
         cityName.setText(c.getCityName() + ", " + c.getCityCountry());
         imageView.setImageBitmap(c.getWeather().getIcon());
-        cityDetail.setText(c.getWeather().getDescription() + "\n" + c.getWeather().getDetails());
-        cityTemperature.setText(c.getWeather().getTemperature() + " ํC");
+        cityDetail.setText(c.getWeather().getDetails());
+        cityTemperature.setText(c.getWeather().getTemperature() + " ํC\n" + c.getWeather().getDescription());
     }
 
     public void back(View view) {

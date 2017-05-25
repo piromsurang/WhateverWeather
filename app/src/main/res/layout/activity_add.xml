@@ -7,26 +7,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.piromsurang.whateverweather.AddActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@raw/stars">
 
     <EditText
         android:id="@+id/search_edittext_add"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </EditText>
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:fontFamily="monospace"
+        android:hint="@string/search_hint"
+        android:inputType="text"
+        android:textColor="#f1f1f1"></EditText>
+
+    <TextView
+        style="@style/Widget.AppCompat.ListView.Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/topic_add"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#bebebe"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/search_listview_add"
+        style="@android:style/Widget.DeviceDefault.Light.ListView"
         android:layout_width="match_parent"
         android:layout_height="406dp"
-        android:layout_weight="1.07">
-    </ListView>
+        android:layout_weight="1.07"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:divider="?android:attr/listDivider"
+        android:dividerHeight="7dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        tools:ignore="InefficientWeight"></ListView>
 
     <Button
         android:id="@+id/back_button_add"
+        style="@android:style/Widget.Holo.Button.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:onClick="back"/>
+        android:fontFamily="monospace"
+        android:onClick="back"
+        android:text="@string/back" />
 
 </LinearLayout>

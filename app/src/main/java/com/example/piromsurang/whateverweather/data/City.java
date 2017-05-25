@@ -55,7 +55,7 @@ public class City {
     }
 
     public String toString() {
-        return String.format("Country: %s City: %s Longtitude: %.3f Latitude: %.3f", cityCountry, cityName, longtitude, latitude);
+        return String.format("%s, %s", cityName, cityCountry);
     }
 
 }

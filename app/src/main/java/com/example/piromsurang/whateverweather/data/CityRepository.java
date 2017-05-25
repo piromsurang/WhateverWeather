@@ -100,7 +100,9 @@ public class CityRepository extends Observable {
     }
 
     public void addToFavorites(City c) {
-        favorites.add(c);
+        if(!favorites.contains(c)){
+            favorites.add(c);
+        }
     }
 
     public void removeFromFavorites(City c) {

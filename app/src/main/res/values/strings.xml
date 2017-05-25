@@ -3,4 +3,7 @@
     <string name="add">ADD</string>
     <string name="weather">Weather</string>
     <string name="back">BACK</string>
+    <string name="topic_add">Cities</string>
+    <string name="search_hint">search here...</string>
+    <string name="favorite">Favorites</string>
 </resources>
