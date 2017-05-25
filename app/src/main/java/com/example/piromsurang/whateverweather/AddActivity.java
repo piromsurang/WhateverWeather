@@ -21,6 +21,8 @@ import com.example.piromsurang.whateverweather.data.CityRepository;
 
 import java.util.ArrayList;
 
+import static com.example.piromsurang.whateverweather.MainActivity.CITYNAME_CODE;
+
 public class AddActivity extends AppCompatActivity implements WeatherView {
 
     private WeatherPresenter presenter;
@@ -54,6 +56,20 @@ public class AddActivity extends AppCompatActivity implements WeatherView {
             }
 
         });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                startCityDetailAcitity(repository.getCityList().get(position));
+                return true;
+            }
+        });
+    }
+
+    public void startCityDetailAcitity(City c) {
+        Intent intent = new Intent(this, CityDetailActivity.class);
+        intent.putExtra(CITYNAME_CODE, c.getCityName());
+        startActivity(intent);
     }
 
     public void initializeEditText() {
